@@ -1,5 +1,6 @@
 # build output
-dist/
+# dist/ #para la web de staticos en sandodev.github.io
+
 # generated types
 .astro/
 
