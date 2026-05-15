@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Pill from '../components/Pill.astro';
+
+const checkboomEntry = (await getCollection('checkboom')).find(entry => entry.slug === 'chk');
+if (!checkboomEntry) {
+	throw new Error('Checkboom entry not found');
+}
+
+const { Content } = await checkboomEntry.render();
+---
+
+<BaseLayout title={`${checkboomEntry.data.title} | Jeanine White`} description={checkboomEntry.data.description}>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title={checkboomEntry.data.title}
+				tagline="Explora Checkboom."
+				align="start"
+			>
+				<div class="details">
+					<div class="tags">
+						{checkboomEntry.data.tags.map((t) => <Pill>{t}</Pill>)}
+					</div>
+					<p class="description">{checkboomEntry.data.description}</p>
+				</div>
+			</Hero>
+			<div class="content">
+				{checkboomEntry.data.img && <img src={checkboomEntry.data.img} alt={checkboomEntry.data.img_alt || ''} />}
+				<div class="content">
+					<Content />
+				</div>
+			</div>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>

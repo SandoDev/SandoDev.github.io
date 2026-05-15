@@ -11,6 +11,7 @@ import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
+import BioShort from '../components/BioShort.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
@@ -31,13 +32,14 @@ const projects = (await getCollection('work'))
 			<header class="hero">
 				<Hero
 					title="Sando MC"
-					tagline="Maestro de Ceremonias y rapero"
+					tagline="Rapero y gestor de eventos de la ciudad de Bogotá/Colombia."
 					align="start"
 				>
 					<div class="roles">
 						<Pill><Icon icon="microphone-stage" size="1.33em" /> Cantante</Pill>
 						<Pill><Icon icon="headphones" size="1.33em" /> Freestyler</Pill>
 						<Pill><Icon icon="pencil-line" size="1.33em" /> Escritor</Pill>
+						<Pill><Icon icon="strategy" size="1.33em" /> Gestor de eventos</Pill>
 					</div>
 				</Hero>
 
@@ -49,14 +51,14 @@ const projects = (await getCollection('work'))
 				/>
 			</header>
 
-			<Skills />
+			<BioShort />
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Trabajos realizados</h3>
-					<p>Estos son algunos de los hitos importantes en el mundo artístico</p>
+					<h3>Música</h3>
+					<p>Amo escribir, amo el poder de la palabra, amo rapear</p>
 				</header>
 
 				<div class="gallery">
@@ -72,7 +74,111 @@ const projects = (await getCollection('work'))
 				</div>
 
 				<div class="cta">
-					<CallToAction href="/work/">
+					<CallToAction href="/musica/">
+						Explorar más
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
+			</section>
+
+			<section class="section with-background with-cta">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Presentaciones</h3>
+					<p>Estos son algunos de los momentos que he vivido en escena</p>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="offset">
+						{
+							projects.map((project) => (
+								<li>
+									<PortfolioPreview project={project} />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+
+				<div class="cta">
+					<CallToAction href="/shows/">
+						Explorar más
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
+			</section>
+
+			<section class="section with-background with-cta">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>CheckBoom</h3>
+					<p>Estos son algunos de los momentos que he vivido en escena</p>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="offset">
+						{
+							projects.map((project) => (
+								<li>
+									<PortfolioPreview project={project} />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+
+				<div class="cta">
+					<CallToAction href="/checkboom/">
+						Explorar más
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
+			</section>
+
+			<section class="section with-background with-cta">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>La Tribu 963</h3>
+					<p>Estos son algunos de los momentos que he vivido en escena</p>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="offset">
+						{
+							projects.map((project) => (
+								<li>
+									<PortfolioPreview project={project} />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+
+				<div class="cta">
+					<CallToAction href="/latribu/">
+						Explorar más
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
+			</section>
+
+			<section class="section with-background with-cta">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Mundo Hip Hop</h3>
+					<p>Estos son algunos de los momentos que he vivido en escena</p>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="offset">
+						{
+							projects.map((project) => (
+								<li>
+									<PortfolioPreview project={project} />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+
+				<div class="cta">
+					<CallToAction href="/hiphop/">
 						Explorar más
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>

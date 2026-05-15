@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Pill from '../components/Pill.astro';
+
+const bioEntry = (await getCollection('bio')).find((entry: any) => entry.slug === 'bio');
+if (!bioEntry) {
+	throw new Error('Bio entry not found');
+}
+
+const { Content } = await bioEntry.render();
+---
+
+<BaseLayout title={`${bioEntry.data.title} | Jeanine White`} description={bioEntry.data.description}>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title={bioEntry.data.title}
+				tagline="Mi historia completa."
+				align="start"
+			>
+				<div class="details">
+					<div class="tags">
+						{bioEntry.data.tags.map((t: string) => <Pill>{t}</Pill>)}
+					</div>
+					<p class="description">{bioEntry.data.description}</p>
+				</div>
+			</Hero>
+			<div class="content">
+				{bioEntry.data.img && <img src={bioEntry.data.img} alt={bioEntry.data.img_alt || ''} />}
+				<div class="content">
+					<Content />
+				</div>
+			</div>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>

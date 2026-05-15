@@ -1,0 +1,59 @@
+---
+import Icon from './Icon.astro';
+---
+
+<a href="/bio/" class="bio-link">
+	<section class="box">
+		<div class="stack gap-2 lg:gap-4">
+			<Icon icon="code" color="var(--accent-regular)" size="2.5rem" gradient />
+			<h2>Bio</h2>
+			<p>Sando, pero en la fría no tengo identidad, entonces soy Pragma o Bigsaga, o exprese cinco sellos reconocibles y llámame Penta</p>
+			<p>Ingeniero Telemático de la UD, apasionado por las letras, los números y el Hip Hop, empecé a escribir temprano por que la ciudad nos miente, dejé de creer y empecé a crear. Creo haber vivido casi tres décadas y creando más de una.</p>
+			<p>Hoy vivo de forma apasionada rapeando, haciendo freestyle, dirigiendo eventos o solo callejeando con jaguares. Los invito a explorar y conocer un poco de lo que soy en el arte del Rap.</p>
+		</div>
+	</section>
+</a>
+
+<style>
+	.bio-link {
+		text-decoration: none;
+		display: block;
+		transition: transform var(--theme-transition);
+	}
+
+	.bio-link:hover {
+		transform: translateY(-2px);
+	}
+
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+		transition: box-shadow var(--theme-transition);
+	}
+
+	.bio-link:hover .box {
+		box-shadow: var(--shadow-md);
+	}
+
+	.box h2 {
+		font-size: var(--text-lg);
+	}
+
+	.box p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.box h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>

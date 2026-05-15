@@ -2,27 +2,13 @@
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-	project: CollectionEntry<'work' | 'music' | 'shows' | 'checkboom' | 'latribu' | 'hiphop' | 'bio'>;
+	project: CollectionEntry<'music'>;
 }
 
-const { data, slug, collection } = Astro.props.project;
-
-// Determine the correct path based on collection
-const getPath = (collection: string, slug: string) => {
-	switch (collection) {
-		case 'work': return `/work/${slug}`;
-		case 'music': return `/musica/${slug}`;
-		case 'shows': return `/shows/${slug}`;
-		case 'checkboom': return `/checkboom/${slug}`;
-		case 'latribu': return `/latribu/${slug}`;
-		case 'hiphop': return `/hiphop/${slug}`;
-		case 'bio': return `/bio/${slug}`;
-		default: return `/work/${slug}`;
-	}
-};
+const { data, slug } = Astro.props.project;
 ---
 
-<a class="card" href={getPath(collection, slug)}>
+<a class="card" href={`/musica/${slug}`}>
 	<span class="title">{data.title}</span>
 	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
 </a>
@@ -63,16 +49,5 @@ const getPath = (collection: string, slug: string) => {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-	}
-
-	@media (min-width: 50em) {
-		.card {
-			height: 22rem;
-			border-radius: 1.5rem;
-		}
-
-		.title {
-			border-radius: 0.9375rem;
-		}
 	}
 </style>

@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import MusicPreview from '../components/MusicPreview.astro';
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+const musicItems = (await getCollection('music')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+	title="Música | Jeanine White"
+	description="Descubre la música de Jeanine White"
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Música"
+				tagline="Explora mis lanzamientos musicales más recientes."
+				align="start"
+			/>
+			<Grid variant="offset">
+				{
+					musicItems.map((item) => (
+						<li>
+							<MusicPreview project={item} />
+						</li>
+					))
+				}
+			</Grid>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
