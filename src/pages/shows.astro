@@ -3,39 +3,35 @@ import { getCollection } from 'astro:content';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-import ContactCTA from '../components/ContactCTA.astro';
+import ShowsPreview from '../components/ShowsPreview.astro';
 import Hero from '../components/Hero.astro';
-import Pill from '../components/Pill.astro';
+import Grid from '../components/Grid.astro';
 
-const showsEntry = (await getCollection('shows')).find(entry => entry.slug === 'show');
-if (!showsEntry) {
-	throw new Error('Shows entry not found');
-}
-
-const { Content } = await showsEntry.render();
+const showItems = (await getCollection('shows')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
 ---
 
-<BaseLayout title={`${showsEntry.data.title} | Camilo Sandoval`} description={showsEntry.data.description}>
+<BaseLayout
+	title="Shows y Presentaciones | Camilo Sandoval"
+	description="Mira algunos de mis shows y presentaciones"
+>
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
 			<Hero
-				title={showsEntry.data.title}
-				tagline="Descubre mis shows y presentaciones."
+				title="Shows y Presentaciones"
+				tagline="Mira algunos de mis shows y presentaciones"
 				align="start"
-			>
-				<div class="details">
-					<div class="tags">
-						{showsEntry.data.tags.map((t) => <Pill>{t}</Pill>)}
-					</div>
-					<p class="description">{showsEntry.data.description}</p>
-				</div>
-			</Hero>
-			<div class="content">
-				{showsEntry.data.img && <img src={showsEntry.data.img} alt={showsEntry.data.img_alt || ''} />}
-				<div class="content">
-					<Content />
-				</div>
-			</div>
+			/>
+			<Grid variant="offset">
+				{
+					showItems.map((item) => (
+						<li>
+							<ShowsPreview project={item} />
+						</li>
+					))
+				}
+			</Grid>
 		</main>
 	</div>
 </BaseLayout>
