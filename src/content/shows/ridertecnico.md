@@ -1,14 +1,21 @@
 ---
 title: Rider Técnico
-publishDate: 2026-05-13 00:00:00
-img: /assets/stock-2.jpg
+publishDate: 2026-05-14 00:00:00
+img: /assets/ridertec.jpeg
 img_alt: name image
 description: |
-  Mi biografía
+  Todo lo que necesito para tocar en un evento
 tags:
-  - Dev
-  - Branding
-  - Backend
+  - Organización
+  - Elementos
+  - Ingeniería de sonido
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac 
+Se que no se ve bien en la imagen porque me rayaron la hoja, pero los elementos son:
+* Bocinas paneadas L y R
+* Mixer con master hacia las bocinas
+* 2 Microfonos
+* Posibilidad de conectar mi PC a la bateria
+* Mesa amplia
+
+// TO-DO Esta sección esta bajo construcción y detalle
