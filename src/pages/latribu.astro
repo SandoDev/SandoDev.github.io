@@ -17,18 +17,22 @@ const { Content } = await latribuEntry.render();
 <BaseLayout title={`${latribuEntry.data.title} | Camilo Sandoval`} description={latribuEntry.data.description}>
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
-			<Hero
-				title={latribuEntry.data.title}
-				tagline="Conoce La Tribu."
-				align="start"
-			>
-				<div class="details">
-					<div class="tags">
-						{latribuEntry.data.tags.map((t: string) => <Pill>{t}</Pill>)}
-					</div>
-					<p class="description">{latribuEntry.data.description}</p>
+			<header>
+				<div class="wrapper stack gap-2">
+					<Hero
+						title={latribuEntry.data.title}
+						tagline="Conoce La Tribu."
+						align="start"
+					>
+						<div class="details">
+							<div class="tags">
+								{latribuEntry.data.tags.map((t: string) => <Pill>{t}</Pill>)}
+							</div>
+							<p class="description">{latribuEntry.data.description}</p>
+						</div>
+					</Hero>
 				</div>
-			</Hero>
+			</header>
 			<div class="content">
 				{latribuEntry.data.img && <img src={latribuEntry.data.img} alt={latribuEntry.data.img_alt || ''} />}
 				<div class="content">
