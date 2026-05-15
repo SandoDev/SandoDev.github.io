@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Pill from '../components/Pill.astro';
+
+const hiphopEntry = (await getCollection('hiphop')).find(entry => entry.slug === 'hiphop');
+if (!hiphopEntry) {
+	throw new Error('Hip Hop entry not found');
+}
+
+const { Content } = await hiphopEntry.render();
+---
+
+<BaseLayout title={`${hiphopEntry.data.title} | Jeanine White`} description={hiphopEntry.data.description}>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title={hiphopEntry.data.title}
+				tagline="Explora el mundo del Hip Hop."
+				align="start"
+			>
+				<div class="details">
+					<div class="tags">
+						{hiphopEntry.data.tags.map((t) => <Pill>{t}</Pill>)}
+					</div>
+					<p class="description">{hiphopEntry.data.description}</p>
+				</div>
+			</Hero>
+			<div class="content">
+				{hiphopEntry.data.img && <img src={hiphopEntry.data.img} alt={hiphopEntry.data.img_alt || ''} />}
+				<div class="content">
+					<Content />
+				</div>
+			</div>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>

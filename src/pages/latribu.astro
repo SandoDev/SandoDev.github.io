@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Pill from '../components/Pill.astro';
+
+const latribuEntry = (await getCollection('latribu')).find((entry: any) => entry.slug === 'latribu');
+if (!latribuEntry) {
+	throw new Error('Latribu entry not found');
+}
+
+const { Content } = await latribuEntry.render();
+---
+
+<BaseLayout title={`${latribuEntry.data.title} | Jeanine White`} description={latribuEntry.data.description}>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title={latribuEntry.data.title}
+				tagline="Conoce La Tribu."
+				align="start"
+			>
+				<div class="details">
+					<div class="tags">
+						{latribuEntry.data.tags.map((t: string) => <Pill>{t}</Pill>)}
+					</div>
+					<p class="description">{latribuEntry.data.description}</p>
+				</div>
+			</Hero>
+			<div class="content">
+				{latribuEntry.data.img && <img src={latribuEntry.data.img} alt={latribuEntry.data.img_alt || ''} />}
+				<div class="content">
+					<Content />
+				</div>
+			</div>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
