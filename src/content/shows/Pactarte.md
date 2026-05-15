@@ -1,5 +1,5 @@
 ---
-title: Presentaciones y shows
+title: Pactarte
 publishDate: 2026-05-13 00:00:00
 img: /assets/stock-2.jpg
 img_alt: name image
