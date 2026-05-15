@@ -1,14 +1,14 @@
 ---
 title: Biografía
 publishDate: 2026-05-13 00:00:00
-img: /assets/stock-2.jpg
+img: /assets/foto_office_meli.jpg
 img_alt: name image
 description: |
-  Mi biografía
+  Una mirada al interior, a la historia, algo somos, más que una imagen en una pantalla.
 tags:
-  - Dev
-  - Branding
-  - Backend
+  - Desarrollador
+  - Ingenería
+  - Arte
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac 
+Actualizar contenido // TO-DO

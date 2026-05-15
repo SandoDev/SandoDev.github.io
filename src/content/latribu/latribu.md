@@ -1,14 +1,14 @@
 ---
 title: La Tribu 963
 publishDate: 2026-05-13 00:00:00
-img: /assets/stock-2.jpg
+img: /assets/latribu.jpg
 img_alt: name image
 description: |
-  Mi biografía
+  La Tribu es algo que llevabamos toda la vida soñando, y con el pasar de los años surgió.
 tags:
-  - Dev
-  - Branding
-  - Backend
+  - Familia
+  - Propósito
+  - Sinergia
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac 
+Hay mucho por contar de mi hermosa Tribu, luego les adelanto el chismo // TOD-DO
