@@ -123,9 +123,19 @@ const showsItems = (await getCollection('shows'))
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							['Teatro de Garaje', 'ECA Records', 'Laser Noise', 'Hell Party', 'El Giro',  'Cine Foro'].map((brand) => (
+							[
+								{ name: 'Teatro de Garaje', img: '/assets/teatro-garaje.jpg' },
+								{ name: 'Tejido social', img: '/assets/tejido-social.jpg' },
+								{ name: 'ECA Records', img: '/assets/eca-records.jpg' },
+								{ name: 'El Giro', img: '/assets/el-giro.jpg' },
+								{ name: 'Rimas and Loops', img: '/assets/rimas-and-loops.jpg' },
+								{ name: 'Laser Noise', img: '/assets/laser-noise.jpg' },
+								{ name: 'Hell Party', img: '/assets/hell-party.JPG' },
+								{ name: 'Cine Foro', img: '/assets/cine-foro.jpg' }
+							].map((brand) => (
 								<li class="mention-card">
-									<p>{brand}</p>
+									<img src={brand.img} alt={brand.name} />
+									<p>{brand.name}</p>
 								</li>
 							))
 						}
@@ -149,9 +159,15 @@ const showsItems = (await getCollection('shows'))
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							['Medicia', 'Hip Hop', 'Palabra', 'Armonización', 'Curación', 'Maestría'].map((brand) => (
+							[
+								{ name: 'Medicina', img: '/assets/medicina.png' },
+								{ name: 'Hip Hop', img: '/assets/tribuhiphop.jpeg' },
+								{ name: 'Armonización', img: '/assets/armonizacion.jpg' },
+								{ name: 'Maestría', img: '/assets/maestria.png' }
+							].map((brand) => (
 								<li class="mention-card">
-									<p>{brand}</p>
+									<img src={brand.img} alt={brand.name} />
+									<p>{brand.name}</p>
 								</li>
 							))
 						}
@@ -175,9 +191,15 @@ const showsItems = (await getCollection('shows'))
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							['Rap', 'Grafiti', 'Dance', 'DJ'].map((brand) => (
+							[
+								{ name: 'Rap', img: '/assets/rap.png' },
+								{ name: 'Grafiti', img: '/assets/grafiti.png' },
+								{ name: 'Dance', img: '/assets/dance.png' },
+								{ name: 'DJ', img: '/assets/dj.jpg' }
+							].map((brand) => (
 								<li class="mention-card">
-									<p>{brand}</p>
+									<img src={brand.img} alt={brand.name} />
+									<p>{brand.name}</p>
 								</li>
 							))
 						}
@@ -322,16 +344,35 @@ const showsItems = (await getCollection('shows'))
 	/* ====================================================== */
 
 	.mention-card {
-		display: flex;
+		position: relative;
 		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
 		border: 1px solid var(--gray-800);
 		border-radius: 1.5rem;
 		color: var(--gray-300);
 		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-sm);
+		overflow: hidden;
+	}
+
+	.mention-card img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 1.5rem;
+	}
+
+	.mention-card p {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 0;
+		padding: 0.5rem;
+		background: rgba(0, 0, 0, 0.7);
+		color: white;
+		text-align: center;
+		font-weight: 600;
+		font-size: var(--text-sm);
 	}
 
 	@media (min-width: 50em) {

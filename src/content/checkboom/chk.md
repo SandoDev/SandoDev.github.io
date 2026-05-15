@@ -1,14 +1,15 @@
 ---
 title: CheckBoom
 publishDate: 2026-05-13 00:00:00
-img: /assets/stock-2.jpg
+img: /assets/check-boom-logo.jpg
 img_alt: name image
 description: |
-  Mi biografía
+  Un lugar donde pasan muchas cosas
 tags:
-  - Dev
-  - Branding
-  - Backend
+  - Casa
+  - Cultura
+  - Arte
+  - Diversión
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac 
+Cada día evolucionamos más para que la cultura y el arte también lo hagan
