@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-import ContactCTA from '../components/ContactCTA.astro';
 import MusicPreview from '../components/MusicPreview.astro';
 import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
@@ -34,5 +33,14 @@ const musicItems = (await getCollection('music')).sort(
 				}
 			</Grid>
 		</main>
+		<div class="footer-divider"></div>
 	</div>
 </BaseLayout>
+
+<style>
+	.footer-divider {
+		border-top: 1px solid var(--gray-800);
+		margin-top: 4rem;
+		width: 100%;
+	}
+</style>
