@@ -17,18 +17,22 @@ const { Content } = await checkboomEntry.render();
 <BaseLayout title={`${checkboomEntry.data.title} | Camilo Sandoval`} description={checkboomEntry.data.description}>
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
-			<Hero
-				title={checkboomEntry.data.title}
-				tagline="Explora Checkboom."
-				align="start"
-			>
-				<div class="details">
-					<div class="tags">
-						{checkboomEntry.data.tags.map((t) => <Pill>{t}</Pill>)}
-					</div>
-					<p class="description">{checkboomEntry.data.description}</p>
+			<header>
+				<div class="wrapper stack gap-2">
+					<Hero
+						title={checkboomEntry.data.title}
+						tagline="Explora Checkboom."
+						align="start"
+					>
+						<div class="details">
+							<div class="tags">
+								{checkboomEntry.data.tags.map((t) => <Pill>{t}</Pill>)}
+							</div>
+							<p class="description">{checkboomEntry.data.description}</p>
+						</div>
+					</Hero>
 				</div>
-			</Hero>
+			</header>
 			<div class="content">
 				{checkboomEntry.data.img && <img src={checkboomEntry.data.img} alt={checkboomEntry.data.img_alt || ''} />}
 				<div class="content">
