@@ -1,19 +1,19 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from "astro:content";
 
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-import ContactCTA from '../../components/ContactCTA.astro';
-import Hero from '../../components/Hero.astro';
-import Icon from '../../components/Icon.astro';
-import Pill from '../../components/Pill.astro';
+import ContactCTA from "../../components/ContactCTA.astro";
+import Hero from "../../components/Hero.astro";
+import Icon from "../../components/Icon.astro";
+import Pill from "../../components/Pill.astro";
 
 interface Props {
-	entry: CollectionEntry<'shows'>;
+	entry: CollectionEntry<"shows">;
 }
 
 export async function getStaticPaths() {
-	const shows = await getCollection('shows');
+	const shows = await getCollection("shows");
 	return shows.map((entry: any) => ({
 		params: { slug: entry.slug },
 		props: { entry },
@@ -29,7 +29,9 @@ const { Content } = await entry.render();
 		<div class="stack gap-15">
 			<header>
 				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/shows/"><Icon icon="arrow-left" /> Shows</a>
+					<a class="back-link" href="/shows/"
+						><Icon icon="arrow-left" /> Shows</a
+					>
 					<Hero title={entry.data.title} align="start">
 						<div class="details">
 							<div class="tags">
@@ -42,14 +44,21 @@ const { Content } = await entry.render();
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					{
+						entry.data.img && (
+							<img
+								src={entry.data.img}
+								alt={entry.data.img_alt || ""}
+							/>
+						)
+					}
 					<div class="content">
 						<Content />
 					</div>
 				</div>
 			</main>
 		</div>
-		<ContactCTA />
+		<div class="footer-divider"></div>
 	</div>
 </BaseLayout>
 
@@ -129,6 +138,12 @@ const { Content } = await entry.render();
 	.content :global(a:hover),
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
+	}
+
+	.footer-divider {
+		border-top: 1px solid var(--gray-800);
+		margin-top: 4rem;
+		width: 100%;
 	}
 
 	@media (min-width: 50em) {
