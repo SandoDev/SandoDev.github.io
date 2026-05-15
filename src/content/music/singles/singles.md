@@ -1,14 +1,19 @@
 ---
 title: Singles
 publishDate: 2026-05-13 00:00:00
-img: /assets/stock-2.jpg
+img: /assets/singles.png
 img_alt: name image
 description: |
-  Mi biografía
+  He escrito varios temas, he grabado algunos, he sudibo pocos,
+  undergraund es una virtud y una maldición
 tags:
-  - Dev
-  - Branding
-  - Backend
+  - CASD
+  - Geneka
+  - Neuman
+  - Sando
+  - Penta
+  - Pragma
+  - Big Saga
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac 
+Todos los temas en youtube https://www.youtube.com/@pentamc5235

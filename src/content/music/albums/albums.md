@@ -1,14 +1,14 @@
 ---
 title: Albums
 publishDate: 2026-05-13 00:00:00
-img: /assets/stock-2.jpg
+img: /assets/albums.jpeg
 img_alt: name image
 description: |
-  Mi biografía
+  Semanario: Lanzado en Bogotá/Col en Julio de 2023.
 tags:
-  - Dev
-  - Branding
-  - Backend
+  - Semanario - Pragma
+  - K-ziqes
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac 
+* Escucha semanario aqui https://www.youtube.com/playlist?list=PLjir3Yex1Cb_PJPNlLaDaDRIDMYaXSRF2
+* El de K-ziqes es un compilado realizado en conmemoración al Evento realizado con el mismo nombre.

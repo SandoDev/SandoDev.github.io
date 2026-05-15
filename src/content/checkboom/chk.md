@@ -12,4 +12,4 @@ tags:
   - Diversión
 ---
 
-Cada día evolucionamos más para que la cultura y el arte también lo hagan
+Organizador y gestor del colectivo CheckBoom. Cada día evolucionamos más para que la cultura y el arte también lo hagan
