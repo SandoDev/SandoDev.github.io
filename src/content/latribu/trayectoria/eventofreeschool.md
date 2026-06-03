@@ -1,6 +1,6 @@
 ---
-title: La Tribu 963
-publishDate: 3000-05-13 00:00:00
+title: La Tribu 963 - freeschool
+publishDate: 2026-05-3 00:00:00
 img: /assets/latribu.jpg
 img_alt: name image
 description: |
@@ -11,4 +11,3 @@ tags:
   - Sinergia
 ---
 
-Hay mucho por contar de mi hermosa Tribu, luego les adelanto el chismo // TOD-DO

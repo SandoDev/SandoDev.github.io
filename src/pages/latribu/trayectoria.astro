@@ -1,0 +1,122 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import TrajectoryPreview from '../../components/PortfolioPreview.astro';
+
+const trayectoriaItems = (await getCollection('latribu'))
+	.filter((entry) => entry.slug.startsWith('trayectoria/'))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<BaseLayout title="Trayectoria | La Tribu 963" description="Entradas de trayectoria de La Tribu 963">
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Trayectoria"
+				tagline="Revisa los eventos y capítulos de nuestra historia"
+				align="start"
+			/>
+
+			{trayectoriaItems.length ? (
+				<div class="trayectoria-list">
+					{
+						trayectoriaItems.map((project) => (
+							<article class="trayectoria-row">
+								<div class="trayectoria-entry">
+									<TrajectoryPreview project={project} />
+								</div>
+								<div class="trayectoria-summary">
+									<div class="summary-card">
+										<h2>{project.data.title}</h2>
+										<p>{project.data.description}</p>
+										{project.data.tags?.length ? (
+											<div class="tags">
+												{project.data.tags.map((tag: string) => <span>{tag}</span>)}
+											</div>
+										) : null}
+									</div>
+								</div>
+							</article>
+						))
+					}
+				</div>
+			) : (
+				<p>No hay entradas de trayectoria disponibles aún.</p>
+			)}
+		</main>
+		<div class="footer-divider"></div>
+	</div>
+</BaseLayout>
+
+<style>
+	.trayectoria-list {
+		display: grid;
+		gap: 2rem;
+        align-self: center;
+	}
+
+	.trayectoria-row {
+		display: grid;
+		grid-template-columns: minmax(0, 1.75fr) minmax(18rem, 1fr);
+		gap: 2rem;
+		align-items: start;
+	}
+
+	.trayectoria-entry {
+		min-width: 0;
+	}
+
+	.trayectoria-summary {
+		min-width: 0;
+	}
+
+	.summary-card {
+		display: grid;
+		gap: 1.25rem;
+		padding: 1.5rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.summary-card h2 {
+		margin: 0;
+		font-size: var(--text-2xl);
+	}
+
+	.summary-card p {
+		margin: 0;
+		line-height: 1.7;
+		color: var(--gray-300);
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tags span {
+		display: inline-flex;
+		padding: 0.4rem 0.75rem;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.06);
+		color: var(--gray-200);
+		font-size: var(--text-sm);
+	}
+
+	.footer-divider {
+		border-top: 1px solid var(--gray-800);
+		margin-top: 4rem;
+		width: 100%;
+	}
+
+	@media (max-width: 64em) {
+		.trayectoria-row {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

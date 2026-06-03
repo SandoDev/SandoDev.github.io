@@ -1,6 +1,6 @@
 ---
-title: La Tribu 963
-publishDate: 3000-05-13 00:00:00
+title: La Tribu 963 - batalla
+publishDate: 2026-05-1 00:00:00
 img: /assets/latribu.jpg
 img_alt: name image
 description: |
